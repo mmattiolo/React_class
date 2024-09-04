@@ -1,0 +1,83 @@
+/* App.css */
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Memory Game Container */
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Styles */
+.card {
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  background-color: #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card Back Styles */
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+/* Card Image Styles */
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+/* Flipped Card Styles */
+.card.flipped .card-back {
+  opacity: 0;
+}
+
+.card.flipped img {
+  opacity: 1;
+}
+
+/* Card Face-down Styles */
+.card:not(.flipped) .card-back {
+  opacity: 1;
+}
+
+.card:not(.flipped) img {
+  opacity: 0;
+}
